@@ -1,0 +1,468 @@
+body{
+    font-family: 'Poppins';
+    font-size: .75rem;
+}
+
+.font-light {
+    font-weight: 300;
+}
+
+.font-regular {
+    font-weight: 400;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+/* header */
+
+#header {
+    margin-left: 0;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+#header-layout {
+    background: #000000;
+    z-index: 99;
+}
+
+#header-title {
+    font-weight: 400;
+    font-size: 18px;
+    color: #555555;
+}
+
+.header-icon {
+    width: 32px;
+    height: 32px;
+}
+
+#mic {
+    width: calc(1.5em + .75rem + 2px);
+    height: calc(1.5em + .75rem + 2px);
+}
+
+.search-col {
+    padding-right: 0;
+}
+
+#searchFilter {
+    margin-left: 10px;
+    /* margin-right: 15px; */
+}
+
+#searchbar {
+    margin: 0;
+    /* margin-top: 10px; */
+    padding: 0;
+}
+
+#searchbar .search-query {
+    /* padding-right: 3px;
+    padding-left: 15px; */
+    padding: 17px;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+    margin-bottom: 0;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    font-size: 10px;
+}
+
+.search-query:focus {
+    z-index: 0;
+}
+
+
+
+/* end header */
+
+.single-image {
+    width: 100%;
+}
+
+.timeline {
+    width: 100%;
+}
+
+.store-name {
+    margin-top: .2rem;
+    margin-bottom: .1rem;
+    font-size: .75rem;
+    font-weight: 600;;
+}
+
+.store-name>img {
+    width: .75rem;
+    height: .75rem;
+    margin-right: .4rem;
+    vertical-align: middle;
+}
+
+.prod-timestamp {
+    margin-bottom: 0rem;
+    font-size: .7rem;
+    color: #afafaf;
+}
+
+.truncate {
+    text-overflow: ellipsis;
+    /*BOTH of the following are required for text-overflow (overflow: hidden; and white-space: nowrap;)*/
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.truncate-read-more {
+    font-size: .75rem;
+    color: #999999;
+    margin-top: -1rem;
+}
+
+/* bootstrap tweaks */
+
+.form-check {
+    margin-left: 5px;
+}
+
+.form-check .form-check-input {
+    position: static;
+    margin-top: 0;
+    margin-right: .3125rem;
+    margin-left: 0;
+}
+
+.form-check-label {
+    font-weight: 300;
+    font-size: 0.8rem;
+}
+
+.form-check-inline {
+    margin-left: 5px;
+}
+
+.timeline-post-header a img {
+    background: #c0c0c0;
+    object-fit: contain;
+}
+
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.carousel-inner img,
+.carousel-inner video,
+video.myvid {
+    width: 100%;
+    height: 100%;
+    /* border-radius: .85rem !important; */
+}
+
+.timeline-main img {
+    width:100%;
+    height:auto;
+    /* border-radius: .85rem !important; */
+}
+
+.timeline-image {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.carousel-indicators li {
+    width: 6px;
+    height: 6px;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    width: 15px;
+    height: 15px;
+}
+
+.timeline-post-header a>img {
+    width: 35px;
+    height: 35px;
+}
+
+h5 {
+    font-weight: 400;
+    font-size: .9rem;
+}
+
+p {
+    font-size: .75rem;
+}
+
+/* style container */
+
+#story-container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: white;
+    overflow-x: auto;
+    box-sizing: border-box;
+}
+
+#story-container ul {
+    list-style-type: none;
+    user-select: none;
+    display: flex;
+    margin-bottom: 0;
+    overflow-x: auto;
+    padding-inline-start: 0;
+    padding: 10px 0;
+}
+
+#story-container ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+}
+
+#story-container ul li:first-child {
+    padding-left: 10px
+}
+
+#story-container ul li:last-child {
+    padding-right: 10px
+}
+
+#story-container ul li .story {
+    width: 70px;
+    height: 70px;
+    padding: 1px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0);
+    position: relative;
+}
+
+#story-container ul li .story img {
+    padding: 6px;
+    background: #f0f0f0;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    box-shadow: inset 0 0 0 2px #FFA03E;
+}
+
+/* #story-container ul li.selected {
+    background: white;
+} */
+
+#story-container ul li.selected .story img {
+    /* background: #cccf12; */
+    box-shadow: inset 0 0 0 2px #FFA03E;
+}
+
+#story-container ul li span {
+    color: black;
+    font-weight: 500;
+    font-size: 9px;
+    text-align: center;
+    white-space: nowrap;
+    max-width: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 5px;
+}
+
+#story-container ul li span img {
+    width: 9px;
+    height: 9px;
+    margin-right: 2px;
+    vertical-align: middle;
+}
+
+.like-comment-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.like-button {
+    display: inline-block;
+}
+
+.comment-button {
+    display: inline-block;
+    margin-left: 15px;
+    flex-grow: 1;
+}
+
+.follower-button {
+    float: right;
+}
+
+.like-comment-counter {
+    display: inline-block;
+    padding: 12px 10px 8px 4px;
+    font-weight: 500;
+    font-size: .8rem;
+    /* color: #999999; */
+}
+
+.post-status {
+    display: inline-block;
+    margin-top: 7.5px;
+    margin-bottom: 7.5px;
+    margin-left: 5px;
+}
+
+.media-body {
+    display: inline-block;
+    flex-grow: 1;
+}
+
+.timeline-post-header {
+    display: flex;
+}
+
+#scroll-top {
+    display: none;
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    padding: 15px;
+    bottom: 75px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 99;
+    background-color: #c0c0c0;
+    opacity: 0.5;
+}
+
+/* #story-container .story .icon-live {
+    position: absolute;
+    z-index: 99;
+    bottom: 0;
+    left: 50%;
+    margin-left: -15px;
+} */
+
+#story-container .story img.icon-live {
+    position: absolute;
+    z-index: 99;
+    bottom: 0;
+    left: 50%;
+    margin-left: -15px;
+    width: 33px;
+    height: 15px;
+    border-radius: 0;
+    padding: 0;
+    background: unset;
+    object-fit: unset;
+    box-shadow: none;
+}
+
+a.timeline-main {
+    z-index: 99;
+}
+
+.video-wrap {
+    position:relative;
+}
+
+.video-sound {
+    z-index: 10;
+    position: absolute;
+    right: 15px;
+    bottom: 20px;
+    background-color: rgba(0,0,0,.5);
+    width: fit-content;
+    padding: 6px;
+    border-radius: 25%;
+}
+
+.video-sound img {
+    width: 20px !important;
+    height: auto !important;
+}
+
+.video-play {
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+    margin: 0 auto;
+    background-color: rgba(0,0,0,.5);
+    width: fit-content;
+    padding: 6px;
+    border-radius: 25%;
+}
+
+.video-play img {
+    /* width: 30px !important; */
+    height: auto !important;
+}
+
+.filter-yellow {
+    filter: brightness(0) saturate(100%) invert(41%) sepia(99%) saturate(501%) hue-rotate(319deg) brightness(88%) contrast(91%);
+}
+
+form#searchFilterForm {
+    /* This bit sets up the horizontal layout */
+    display:flex;
+    flex-direction:row;
+    
+    /* This bit draws the box around it */
+    border:none;
+    border-radius: 20px;
+
+    /* I've used padding so you can see the edges of the elements. */
+    padding:5px 12px;
+    background-color: white;
+  }
+
+  input.search-query {
+    /* Tell the input to use all the available space */
+    flex-grow:2;
+    /* And hide the input's outline, so the form looks like the outline */
+    border:none;
+
+    /* padding: 17px; */
+  /* IE7-8 doesn't have border-radius, so don't indent the padding */
+    margin-bottom: 0;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    font-size: 10px;
+  }
+
+  input:focus {
+    /* removing the input focus blue box. Put this on the form if you like. */
+    outline: none;
+  }
+
+  #searchFilterForm img  {
+    /* Just a little styling to make it pretty */
+    /* border:1px solid blue; */
+    /* background:blue; */
+    /* color:white; */
+    width: 25px;
+    height: 25px;
+  }
+
+  .verified-icon-prod {
+      width: 15px;
+      height: 15px;
+      margin-right: 5px;
+  }
+
+  .prod-name {
+      font-weight: 500;
+  }

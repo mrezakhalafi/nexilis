@@ -1,0 +1,104 @@
+body {
+    background-color: #e0e0e0;
+}
+
+#buttond_send {
+    width: 40px;
+    height: 40px;
+    background: #374556;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+#triangle-right {
+    transform: rotate(90deg);
+}
+
+#input {
+    width: 100%;
+}
+
+#header {
+    margin-left: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+#header-layout {
+    background: #374556;;
+}
+
+#header-title {
+    font-weight: 300;
+    font-size: 18px;
+    color: white;
+}
+
+.truncate {
+    text-overflow: ellipsis;
+    /*BOTH of the following are required for text-overflow (overflow: hidden; and white-space: nowrap;)*/
+    overflow: hidden;
+    white-space:nowrap;
+}
+
+.truncate-read-more {
+    /* font-size: .75rem; */
+    /* color: #999999; */
+    margin-top: -1rem;
+}
+
+.verified-icon-prod {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+
+div.prod-desc[data-readmore] {
+    /* overflow: hidden; */
+}
+
+/* #title-bar {
+    font-weight: 300; 
+    font-size: 18px;
+}
+
+#div-content {
+    height:100vh;
+}
+
+#content-comment {
+    height: 90%;
+}
+
+#div-image {
+    width: 20%; 
+    padding-left: 20px;
+}
+
+#display-pic {
+    height:50px; 
+    width:50px; 
+    cursor:pointer; 
+    object-position: center; 
+    background: grey;
+}
+
+#body-comment {
+    width: 80%; 
+    padding-right: 20px;
+}
+
+#title-comment {
+    font-weight: bold;
+}
+
+#desc-comment {
+    font-weight: 300;
+}
+
+#time-comment{
+    font-weight: 300; 
+    color: grey;
+} */

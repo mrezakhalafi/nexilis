@@ -1,0 +1,14 @@
+CREATE TABLE `DIGIPOS_PURCHASE` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `TRX_ID` varchar(64) NOT NULL,
+  `PRODUCT_CODE` varchar(32) NOT NULL,
+  `CUSTOMER_ID` varchar(64) NOT NULL,
+  `COMMAND` varchar(64) NOT NULL,
+  `DATA` text DEFAULT NULL COMMENT 'JSON additional data',
+  `STATUS` int(11) NOT NULL COMMENT '1=payment success; 2=vbot success',
+  `PAYMENT_METHOD` varchar(64) NOT NULL,
+  `AMOUNT` int(11) NOT NULL,
+  `LAST_UPDATE` bigint(20) NOT NULL,
+  PRIMARY KEY (`ID`),
+  UNIQUE KEY `TRX_ID` (`TRX_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4

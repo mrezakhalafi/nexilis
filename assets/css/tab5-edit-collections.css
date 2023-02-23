@@ -1,0 +1,196 @@
+/* ALL */
+
+body{
+    font-family: 'Poppins';
+    /* min-height: 101vh; */
+    font-size: .75rem;
+    /* background-color: #000000; */
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    transition: top 0.4s ease-in-out;
+    width: 100%;
+}
+
+.text-purple{
+	color: #000000;
+}
+
+.text-grey{
+	color: #585e82;
+}
+
+.bg-purple{
+	background-color: #000000;
+}
+
+.small-text{
+	font-size: 11px;
+}
+
+.orange-badge{
+    background-color: #FFA03E;
+}
+
+.orange-text {
+    color: #FFA03E;
+}
+
+.gray-text {
+    color: grey;
+}
+
+a{
+    text-decoration: none;
+    color: #000000;
+}
+
+a:hover{
+    text-decoration: none;
+    color: #000000;
+}
+
+/* end ALL */
+
+.main-container {
+    background-color: transparent;
+    border-top-right-radius: 35px;
+    min-height: 100vh;
+    margin-top: 60px;
+}
+
+
+/* search bar */
+
+form#searchFilterForm-a {
+    /* This bit sets up the horizontal layout */
+    display: flex;
+    flex-direction: row;
+
+    /* This bit draws the box around it */
+    /* border: none; */
+    border-radius: 20px;
+
+    /* I've used padding so you can see the edges of the elements. */
+    padding: 1px 12px;
+    background-color: white;
+
+    /* vertically center items */
+    align-items: center;
+}
+
+input.search-query {
+    /* Tell the input to use all the available space */
+    flex-grow: 2;
+    /* And hide the input's outline, so the form looks like the outline */
+    border: none;
+
+    /* padding: 17px; */
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+    margin-bottom: 0;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    font-size: 10px;
+
+    /* for iOS small screen  */
+    width: 100%;
+}
+
+input:focus {
+    /* removing the input focus blue box. Put this on the form if you like. */
+    outline: none;
+}
+
+#searchFilterForm-a #voice-search {
+    /* Just a little styling to make it pretty */
+    width: 25px;
+    height: 25px;
+}
+
+#searchFilterForm-a #delete-query {
+    width: 22px;
+    height: 22px;
+    margin-right: 7px;
+}
+
+/* end search bar */
+
+/* COLLECTIONS LIST */
+
+.row.slick-row {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.collection-row {
+    border-bottom: 1px solid lightgray;
+}
+
+.collections-right {
+    position: relative;
+    margin-top: .25rem;
+    margin-bottom: .25rem;
+}
+
+.collections-img {
+    width: 100%;
+    height: auto;
+}
+
+.collection-row .views {
+    font-size: .65rem;
+}
+
+.collection-row .collection-title {
+    margin-bottom: .25rem;
+    font-weight: 600;
+    font-size: .9rem;
+}
+
+.collection-row .collection-desc {
+    font-size: .65rem;
+    font-weight: 500;
+}
+
+.collection-row .collection-stats {
+    position: absolute;
+    bottom: 0;
+}
+
+.collection-row .collection-stats span {
+    font-size: .65rem;
+    color: grey;
+}
+
+.collection-row .visibility-status {
+    background-color: lightgray;
+}
+
+.collection-row .delete-collection {
+    background-color: #c63837;
+    color: white;
+}
+
+.collection-row .visibility-status img,
+.collection-row .delete-collection img {
+    height: 30px;
+    width: auto;
+}
+
+/* END COLLECTIONS LIST */
+
+/* MODALS */
+
+.btn-addcart {
+    font-size: .7rem;
+    background-color: #000000;
+    color: white;
+    border-radius: 20px;
+    filter: drop-shadow(1px 3px 3px lightgray);
+    padding: .5rem .75rem;
+}
+
+/* END MODALS */

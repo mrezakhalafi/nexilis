@@ -1,0 +1,236 @@
+/* ALL */
+
+body{
+    font-family: 'Poppins';
+    /* min-height: 101vh; */
+    font-size: 13px;
+    /* background-color: #6945A5; */
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    transition: top 0.4s ease-in-out;
+    width: 100%;
+}
+
+.text-purple{
+	color: #6945A5;
+}
+
+.text-grey{
+	color: #585e82;
+}
+
+.bg-purple{
+	background-color: #6945A5;
+}
+
+.small-text{
+	font-size: 12px;
+}
+
+.orange-badge{
+    background-color: #FFA03E;
+}
+
+.orange-text {
+    color: #FFA03E;
+}
+
+.gray-text {
+    color: grey;
+}
+
+a{
+    text-decoration: none;
+    color: #000000;
+}
+
+a:hover{
+    text-decoration: none;
+    color: #000000;
+}
+
+/* end ALL */
+
+.main-container {
+    background-color: white;
+    border-top-right-radius: 35px;
+    /* height: 100vh; */
+    margin-top: 60px;
+}
+
+
+/* search bar */
+
+form#searchFilterForm-a {
+    /* This bit sets up the horizontal layout */
+    display: flex;
+    flex-direction: row;
+
+    /* This bit draws the box around it */
+    border: none;
+    border-radius: 20px;
+
+    /* I've used padding so you can see the edges of the elements. */
+    padding: 1px 12px;
+    background-color: white;
+
+    /* vertically center items */
+    align-items: center;
+}
+
+input.search-query {
+    /* Tell the input to use all the available space */
+    flex-grow: 2;
+    /* And hide the input's outline, so the form looks like the outline */
+    border: none;
+
+    /* padding: 17px; */
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+    margin-bottom: 0;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    font-size: 11px;
+
+    /* for iOS small screen  */
+    width: 100%;
+}
+
+input:focus {
+    /* removing the input focus blue box. Put this on the form if you like. */
+    outline: none;
+}
+
+#searchFilterForm-a #voice-search {
+    /* Just a little styling to make it pretty */
+    width: 25px;
+    height: 25px;
+}
+
+#searchFilterForm-a #delete-query {
+    width: 22px;
+    height: 22px;
+    margin-right: 7px;
+}
+
+/* end search bar */
+
+/* new collection form */
+
+input#collection-name, 
+textarea#collection-desc,
+.text-length-counter {
+    /* border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid #ced4da; */
+    font-size: 13px;
+}
+
+.textarea-wrap {
+    position:relative;
+}
+
+textarea#collection-desc {
+    min-height: 80px;
+}
+
+#text-length-counter {
+    bottom: 10px;
+    right: 15px;
+    position: absolute;
+    color: #ced4da;
+}
+
+/* end new collection form */
+
+/* RECENT PURCHASES */
+
+#recent-purchases {
+    background-color: transparent;
+    height: 100%;
+    overflow-y: auto;
+    padding-bottom: 4.5rem;
+}
+
+#wishlist {
+    background-color: transparent;
+    height: 100%;
+    overflow-y: auto;
+    padding-bottom: 4.5rem;
+}
+
+.collection-row {
+    border-bottom: 1px solid lightgray;
+}
+
+.collections-right {
+    position: relative;
+    margin-top: .25rem;
+    margin-bottom: .25rem;
+}
+
+.collections-img {
+    min-width: 75px;
+    min-height: 75px;
+    object-fit: cover;
+}
+
+.collection-row .views {
+    font-size: 10px;
+    font-weight: 600;
+    margin-bottom: .1rem;
+}
+
+.collection-row .collection-title {
+    margin-bottom: .2rem;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.collection-row .collection-desc {
+    font-size: 11px;
+    font-weight: 500;
+    color: grey;
+}
+
+.collection-row .collection-stats {
+    position: absolute;
+    bottom: 0;
+}
+
+.collection-row .collection-stats span {
+    font-size: 11px;
+    color: grey;
+}
+
+/* END RECENT PURCHASES */
+
+
+.btn-next-shop{
+    color: #ffffff;
+    background-color: #000000;
+    border: none;
+    font-size: 12px;
+    border-radius: 20px;
+    filter: drop-shadow(0px 4px 4px rgb(206, 206, 206));
+}
+
+.btn-addcart {
+    font-size: .7rem;
+    background-color: #000000;
+    color: white;
+    border-radius: 20px;
+    filter: drop-shadow(1px 3px 3px lightgray);
+    padding: .5rem .75rem;
+}
+
+#btn-create-collection {
+    background-color:white;
+    position: fixed;
+    z-index: 99;
+    bottom: 0;
+}

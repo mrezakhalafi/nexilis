@@ -1,0 +1,51 @@
+/* ALL */
+
+body{
+font-family: 'Poppins';
+}
+
+.text-purple{
+color: #000000;
+}
+
+.text-grey{
+color: #585e82;
+}
+
+.bg-purple{
+background-color: #000000;
+}
+
+.small-text{
+font-size: 11px;
+}
+
+.orange-badge{
+background-color: #FFA03E;
+}
+
+.orange-text {
+color: #FFA03E;
+}
+
+.gray-text {
+color: grey;
+}
+
+a{
+text-decoration: none;
+color: #000000;
+}
+
+a:hover{
+text-decoration: none;
+color: #000000;
+}
+
+.small-icon {
+width: 15px;
+}
+
+.small-left-padding {
+padding-left: 5px;
+}

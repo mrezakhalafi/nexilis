@@ -1,0 +1,29 @@
+INSERT INTO `PRODUCT`(`CODE`,`NAME`,`CREATED_DATE`,`SHOP_CODE`,`DESCRIPTION`,`THUMB_ID`) VALUES
+(1, 'Bakpia Aneka Rasa Isi 20', round(1000 * unix_timestamp(now(3))), 2, 'Bakpia Aneka Rasa sangat recomended untuk Anda yang ingin merasakan semua varian rasa dari Bakpia Mutiara Jogja dalam satu box. Bakpia Aneka Rasa isinya kacang hijau, kumbu hitam, keju dan coklat.', 'https://beli.bakpiamutiarajogja.com/wp-content/uploads/2020/12/bakpia-aneka-rasa-jogja-enak.jpg'),
+(2, 'Bakpia Rasa Green Tea Isi 20', round(1000 * unix_timestamp(now(3))), 2, 'Terrbuat dari teh hijau pilihan yang diolah dengan cara higienis, menjadikan Bakpia Mutiara Rasa Green Tea memiliki cita rasa yang khas.', 'https://beli.bakpiamutiarajogja.com/wp-content/uploads/2020/12/Green-Tea-1.jpg'),
+(3, 'Bakpia Kacang Hijau Isi 20', round(1000 * unix_timestamp(now(3))), 2, 'Terbuat dari kacang hijau pilihan, susu, gula serta bahan tambahan lain yang sudah berstandar MUI dan BPOM, tanpa menggunakan bahan pengawet dan pewarna sehingga aman dan halal untuk di konsumsi. Bahan baku adalah kacang hijau berkualitas terbaik dan melalui proses pencucian yang higenis sehingga Bakpia Kacang Hijau Mutiara Jogja lebih tahan lama sampai minimal 7 hari tanpa ada perubahan rasa. Menikmati Bakpia Mutiara Jogja rasa kacang hijau Anda akan merasakan kelezatan dan kelembutan bakpia yang benar-benar berbeda dari Bakpia Kacang Hijau lainnya.', 'https://beli.bakpiamutiarajogja.com/wp-content/uploads/2020/12/Kacang-Hijau.jpg'),
+(4, 'Bakpia Kumbu Hitam Isi 20', round(1000 * unix_timestamp(now(3))), 2, 'Terbuat dari kacang merah, susu, gula, dan bahan tambahan lain yang berstandar MUI dan BPOM. Bakpia MUtiara Jogja kumbu hitam warna kumbunya tidak berwarna hitam pekat seperti bakpia kumbu hitam pada umumnya. Warna hitamnya berasal dari warna asli hasil rebusan dari kacang merah (kacang tholo) yang merupakan bahan baku Bakpia Mutiara Jogja Kumbu Hitam, tanpa menggunakan pewarna makanan sama sekali sehingga sangat aman di konsumsi. Bakpia Mutiara Jogja Kumbu Hitam rasanya lezat, manisnya pas, kumbunya empuk dan tetap empuk bahkan sampai tanggal kadaluarsanya habis. Dapat bertahan sampai minimal 7 hari tanpa bahan pengawet sama sekali.', 'https://beli.bakpiamutiarajogja.com/wp-content/uploads/2020/12/kumbu-hitam.jpg'),
+(5, 'Kentang Udang Matang Bogajaya Khas Surabaya Siap Saji 150 Gram', round(1000 * unix_timestamp(now(3))), 1, 'ready stock! Kentang Udang Matang Bogajaya Khas Surabaya Siap Saji 150 Gram', 'https://www.tokobogajaya.com/wp-content/uploads/2020/11/Kentang-Udang-Matang-JPG.jpg'),
+(6, 'Savory Toaster Vegetable', round(1000 * unix_timestamp(now(3))), 3, 'Mix vegetable yang segar di lapisi pastry tipis ini cocok dijadikan kudapan yang nikmat. Savory toaster vegetable lebih nikmat disajikan saat hangat! Buruan cobain!', 'https://malangstrudel.com/wp-content/uploads/2019/06/WEB-SAVORY-VEGETABLE-1024x1024.jpg'),
+(7, 'Semprong Unyil', round(1000 * unix_timestamp(now(3))), 4, 'Kalau semprong nyang gede-gede udeh biase dipasaran
+kali ini mpok Romleh menghadirkan semprong nyang unik
+
+Namanye semprong unyil karena semprongnye imut dan enak ade rasa jahe dan gurihh dechh pokoknye
+Orang betawi mahh pasti kenal dong ama makanan semprong
+Mpok Romleh menjadikan semprong betawi menjadi semprong nyang modern makanan tradisional nyang jadi kekinian.
+
+disarankan menggunakan gojek. Rawan remuk', 'https://romlah.com/wp-content/uploads/2017/12/Semprong-Unyil-1.jpg'),
+(8, 'Parcel Makanan Khas Betawi', round(1000 * unix_timestamp(now(3))), 5, 'Parcel Makanan Khas Betawi sangat Cocok untuk tamu kehormatan anda, cocok juga untuk seserahan acara pernikahan. Dengan Parcel cantik yang berisi lengkap semua produk MPOK NINI sangat pas menjadi Oleh-oleh untuk keluarga anda dan sangat cocok untuk hadiah/bingkisan.', 'https://oleholehbekasi.com/wp-content/uploads/2018/10/parcel-makanan-khas-betawi.jpg'),
+(9, 'Tape Ketan Busepuh', round(1000 * unix_timestamp(now(3))), 6, 'Peuyeum atau Tape Ketan Kuningan adalah sebuah kisah menarik dunia kuliner khas masyarakat setempat. Awalnya makanan ini hanya dikonsumsi oleh masyarakat Kuningan pada momen-momen khusus, seperti : lebaran dan hajatan (acara pernikahan atau khitanan). Namun saat ini  telah menjadi ikon oleh-oleh khas kota Kuningan, Jawa Barat.
+
+Makanan ini terbuat dari beras ketan yang diolah melalui proses fermentasi tradisional (dengan ragi), dibungkus dengan daun jambu dan diberi pewarna alami daun katuk, sehingga menimbulkan cita rasa yang enak di lidah.
+
+Hal yang menarik lainnya adalah packaging tape umumnya dijual dalam kemasan ember plastik. Ini terjadi karena keterbatasan pengetahuan masyarakat dalam teknologi pengemasan makanan. Mengingat proses fermentasi dalam pengolahan makanan tersebut dapat menimbulkan tekanan gas yang kuat dan akan mengeluarkan air saat proses fermentasi selesai. Sehingga cara yang sederhana dan mudah adalah mengemasnya dalam ember plastik.
+
+Sejalan dengan perkembangan teknologi pengemasan, tape ketan khas Kuningan kini dapat dikemas secara modern dengan flexible packaging. Namun demikian, masih banyak masyarakat yang lebih menyukai kemasan ember plastik dengan alasan tradisional; meskipun sebenarnya kurang praktis dan estetis jika dibawa untuk oleh-oleh atau buah tangan (armala).', 'https://busepuh.com/wp-content/uploads/2018/04/Tape-Ketan-Busepuh-a.jpg'),
+(10, 'Pie Pisang Lampung', round(1000 * unix_timestamp(now(3))), 7, 'Pie Pisang adalah kuliner oleh-oleh khas lampung yang saat ini sangat ngehits di Lampung. Dijamin rasanya bikin anda ketagihan :)', 'https://1.bp.blogspot.com/-cQgpZ-ixUvg/WLuLvMHGwaI/AAAAAAAAEbg/kb-gNPfd36UKlS7kUJCHXzOHBcSjNzv7gCLcB/s1600/Pie%2BPisang%2BLampung%2BYussy.jpg')
+;
+/*
+,
+(unique_code, 'name', round(1000 * unix_timestamp(now(3))), shop_code, 'description', 'image_link')
+*/

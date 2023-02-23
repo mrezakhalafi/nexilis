@@ -1,0 +1,163 @@
+.simple-modal-dialog {
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  border:none;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.simple-modal-window {
+  background-color: #fff;
+  min-width: 90%;
+  max-width: 90%;
+  /* min-height: 15%; */
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.4);
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 16px;
+  animation: fadein .5s ease-in-out;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+.simple-modal-title {
+  /* font-weight: bold; */
+  background-color: #000000;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  color:#fff;
+  text-align: center;
+  padding: 7px 7px;
+}
+
+.simple-modal-title-text {
+  margin-left:30px;
+}
+
+.simple-modal-close {
+  float: right;
+  background: none;
+  font-size: 26px;
+  font-weight: bold;
+  line-height: 18px;
+  color:#fff;
+  width:30px;
+}
+
+.simple-modal-text {
+  width: 90%;
+  margin-top: auto;
+  padding: 50px 0;
+}
+
+#cart-list {
+  padding: 0 0 50px 0;
+}
+
+.simple-modal-button-group {
+  margin: auto;
+}
+
+.simple-modal-button-group button {
+  min-width: 100px;
+  /* font-weight: bold; */
+  color:#fff;
+  margin: 10px 10px;
+}
+
+.simple-modal-button-green {
+  background-color: #ffc107;
+}
+
+.simple-modal-button-red {
+  background-color: #000000;
+}
+
+.overflow-cart {
+  margin-top: 10px;
+  max-height: 300px;
+  /* min-height: 300px; */
+  overflow-y: auto;
+}
+
+.cart-item {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.price-tag{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.price-total{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 90%;
+}
+
+.shipment-total{
+  margin-top: 50px;
+  margin-bottom: 10px;
+  width: 95%;
+  border-radius: 10px;
+  background: #ffc107;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.shipment-cost{
+  margin-left: auto;
+}
+
+.insert-address{
+  border-radius: 10px;
+  background: #e0aa07;
+  padding: 10px;
+  margin-left: auto;
+}
+
+.badge-notify{
+  background:#ffc107;
+  position:relative;
+  top: -10px;
+  left: -10px;
+  font-weight: normal !important;
+}
+
+.cart-checkbox{
+  margin-right: 10px;
+}
+
+.error {
+    position: relative;
+    animation: shake .1s linear;
+    animation-iteration-count: 3;
+    background: rgb(194, 75, 6);
+}
+
+@keyframes shake {
+    0% { left: -5px; }
+    100% { right: -5px; }
+}
+
+.cart-dropdown-title {
+  background-color: #000000;
+  color: white;
+  margin-left:30px;
+}

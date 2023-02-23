@@ -1,0 +1,210 @@
+/* ALL */
+
+body{
+    font-family: 'Poppins';
+}
+
+.text-purple{
+	color: #000000;
+}
+
+.text-grey{
+	color: #585e82;
+}
+
+.bg-purple{
+	background-color: #000000;
+}
+
+.small-text{
+	font-size: 10px;
+}
+
+.orange-badge{
+    background-color: #FFA03E;
+}
+
+.orange-text {
+    color: #FFA03E;
+}
+
+.gray-text {
+    color: grey;
+}
+
+a{
+    text-decoration: none;
+    color: #000000;
+}
+
+a:hover{
+    text-decoration: none;
+    color: #000000;
+}
+
+.small-icon {
+    width: 15px;
+}
+
+.small-left-padding {
+    padding-left: 5px;
+}
+
+form#searchFilterForm-a {
+    /* This bit sets up the horizontal layout */
+    display: flex;
+    flex-direction: row;
+
+    /* This bit draws the box around it */
+    border: none;
+    border-radius: 20px;
+
+    /* I've used padding so you can see the edges of the elements. */
+    padding: 5px 12px;
+    background-color: white;
+
+    /* vertically center items */
+    align-items: center;
+}
+
+input.search-query {
+    /* Tell the input to use all the available space */
+    flex-grow: 2;
+    /* And hide the input's outline, so the form looks like the outline */
+    border: none;
+
+    /* padding: 17px; */
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+    margin-bottom: 0;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    font-size: 10px;
+
+    width: 100%;
+}
+
+input:focus {
+    /* removing the input focus blue box. Put this on the form if you like. */
+    outline: none;
+}
+
+#searchFilterForm-a #voice-search {
+    /* Just a little styling to make it pretty */
+    width: 25px;
+    height: 25px;
+}
+
+#searchFilterForm-a #delete-query {
+    width: 22px;
+    height: 22px;
+    margin-right: 7px;
+}
+
+.nav-tabs {
+    border-bottom: 0px;
+}
+
+.nav-tabs .nav-link.active {
+    color: black;
+    /* background-color: #000000;
+    border-color: #000000; */
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 3px solid #FFA03E;
+    font-weight: 500;
+}
+
+.nav-tabs .nav-link:hover {
+    color: black;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    /* background-color: #000000;
+    border-color: #000000; */
+    border-bottom: 3px solid #FFA03E;
+}
+
+.nav-tabs .nav-link {
+    color: black;
+    font-size: 11px;
+}
+
+ul.horizontal-slide {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  display: block;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+ul.horizontal-slide::-webkit-scrollbar {
+  display: none;
+}
+
+ul.horizontal-slide li {
+  display: inline-block;
+}
+
+.box {
+    position: absolute;
+    width: 100%;
+}
+
+.stack-top {
+    z-index: 999;
+    position: relative;
+    background: lightgray;
+}
+
+
+
+
+/* ACTIVITY TAB CONTENT */
+
+.activity-items {
+    border-bottom: 1px solid #d0d0d0;
+}
+
+.logo-merchant {
+    border-radius: 50%;
+    width: 100%;
+    height: auto;
+}
+
+.material-icons {
+    font-size: 11px !important;
+}
+
+.read-status {
+    color:#FFA03E;
+}
+
+.notification-name {
+    font-weight: 600;
+}
+
+/* END ACTIVITY TAB */
+
+/* ORDER TAB CONTENT */
+
+.logo-order {
+    width: 45px;
+    height: auto;
+}
+
+.notification-name a {
+    color: #000000;
+}
+
+.order-sent {
+    background-color:#eeeeee;
+}
+
+.order-group>.row:not(:last-child)>.col-10 {
+    border-bottom: 1px solid #ccc;
+}
+
+/* END ORDER TAB */

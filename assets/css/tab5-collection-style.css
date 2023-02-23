@@ -1,0 +1,600 @@
+/* ALL */
+
+body{
+    font-family: 'Poppins';
+    min-height: 101vh;
+}
+
+.text-purple{
+	color: #000000;
+}
+
+.text-grey{
+	color: #8a898b;
+}
+
+.bg-purple{
+	background-color: #000000;
+}
+
+.small-text{
+	font-size: 12px;
+}
+
+.orange-badge{
+    background-color: #FFA03E;
+}
+
+.orange-text {
+    color: #FFA03E;
+}
+
+.gray-text {
+    color: grey;
+}
+
+a{
+    text-decoration: none;
+    color: #000000;
+}
+
+a:hover{
+    text-decoration: none;
+    color: #000000;
+}
+
+.small-icon {
+    width: 15px;
+}
+
+.small-left-padding {
+    padding-left: 5px;
+}
+
+.form-rounded {
+    border-radius: 1rem;
+    height: 30px;
+    width: 90%;
+}
+
+.nav-tabs .nav-link.active {
+    color: white;
+    background-color: #000000;
+    border-color: #000000;
+    border-bottom: 3px solid #FFA03E;
+}
+
+.nav-tabs .nav-link:hover {
+    color: white;
+    background-color: #000000;
+    border-color: #000000;
+    border-bottom: 3px solid #FFA03E;
+}
+
+.nav-tabs .nav-link {
+    color: white;
+}
+
+ul.horizontal-slide {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  display: block;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+ul.horizontal-slide::-webkit-scrollbar {
+  display: none;
+}
+
+ul.horizontal-slide li {
+  display: inline-block;
+}
+
+.box {
+    position: absolute;
+    width: 100%;
+}
+
+.stack-top {
+    z-index: 999;
+    position: relative;
+    background: lightgray;
+}
+
+/* .div-search {
+    position: relative;
+}
+
+.search-box {
+    border-radius: 1rem;
+    height: 30px;
+    font-size: 10px;
+}
+
+.search-voice {
+    position: absolute;
+    z-index: 999;
+    right: 5px;
+} */
+form#searchFilterForm-a {
+    /* This bit sets up the horizontal layout */
+    display: flex;
+    flex-direction: row;
+
+    /* This bit draws the box around it */
+    border: none;
+    border-radius: 20px;
+
+    /* I've used padding so you can see the edges of the elements. */
+    padding: 1px 12px;
+    background-color: white;
+
+    /* vertically center items */
+    align-items: center;
+}
+
+input.search-query {
+    /* Tell the input to use all the available space */
+    flex-grow: 2;
+    /* And hide the input's outline, so the form looks like the outline */
+    border: none;
+
+    /* padding: 17px; */
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+    margin-bottom: 0;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    font-size: 11px;
+
+    /* for iOS small screen  */
+    width: 100%;
+}
+
+input:focus {
+    /* removing the input focus blue box. Put this on the form if you like. */
+    outline: none;
+}
+
+#searchFilterForm-a #voice-search {
+    /* Just a little styling to make it pretty */
+    width: 25px;
+    height: 25px;
+}
+
+#searchFilterForm-a #delete-query {
+    width: 22px;
+    height: 22px;
+    margin-right: 7px;
+}
+
+.logo-merchant {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: black;
+    border-bottom: 2px solid #000000;
+    background-color: white;
+    font-weight: bold;
+    border-radius: 0%;
+}
+
+.nav-fill .nav-item .nav-link, .nav-justified .nav-item .nav-link {
+    width: 100%;
+    color: black;
+    font-weight: bold;
+}
+
+.nav-item {
+    color: black;
+}
+
+/* start follow store modal */
+#staticBackdrop .modal-content {
+    background-image: url("../img/icons/Welcome.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: unset;
+    border:unset;
+    height: 30vh;
+    width: auto;
+}
+
+@media (max-width: 399px) {
+    #staticBackdrop .modal-content {
+        max-width: 100%;
+    }
+
+    #staticBackdrop .modal-content h6 {
+        font-size: .85rem;
+    }
+
+    #staticBackdrop .modal-content p {
+        font-size: .7rem !important;
+    }
+}
+
+@media (min-width: 400px) {
+    #staticBackdrop .modal-content {
+        max-width: 80%;
+    }
+}
+
+#staticBackdrop .modal-content .modal-body {
+    max-width: 65%;
+    margin: 0 auto;
+    border: 0;
+    padding: 1rem;
+}
+
+#staticBackdrop .modal-content .modal-body {
+    height: 60%;
+    display: flex;
+    align-items: center;
+}
+
+#staticBackdrop .modal-content .modal-body h6 {
+    font-weight: 600;
+    color: #000000;
+    font-size: .9rem;
+}
+
+#staticBackdrop .modal-content .modal-body p {
+    font-weight: 500;
+}
+
+#staticBackdrop .modal-content .modal-footer {
+    border: 0;
+    /* max-width: 75%; */
+    justify-content: center;
+    height: 40%;
+    font-weight: 500;
+    align-items: center;
+}
+
+#staticBackdrop .modal-content .modal-body p {
+    font-size: .8rem;
+}
+
+#staticBackdrop #modal-follow-btn {
+    margin: 0 auto;
+    font-size: .8rem;
+    background-color: #000000;
+    border-radius: 20px;
+    width: 100%;
+    width: 70%;
+}
+/* end follow store modal */
+
+.toko-q {
+    width: 80px; 
+    background-color: white; 
+    border-radius: 5px; 
+    color: #000000; 
+    border: solid;
+    border-width: thin;
+    border-color: #000000
+}
+
+.promo-text {
+    border-left: 2px solid white; 
+    padding-left: 5px !important;
+}
+
+.prod-name-price {
+    padding: 1rem;
+    border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+h5.product-price {
+    color: #bbb;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.prod-details {
+    /* padding: 1rem 1.5rem 0 1.5rem; */
+    height: 110px;
+    overflow-y: auto;
+    font-size: 12px;
+}
+
+.prod-addtocart {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+    background-color:white;
+}
+
+.prod-addtocart .input-group {
+    height: 100%;
+}
+
+.counter {
+    width: 100%;
+}
+
+.counter input[type="text"] {
+    border-left: 0;
+    border-right: 0;
+    
+}
+
+.counter .btn, .form-control {
+    font-size: .75rem;
+    padding: .1rem .5rem;
+}
+
+.btn-decrease {
+    border:1px solid #ced4da;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-right: 0;
+}
+
+.btn-increase {
+    border:1px solid #ced4da;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-left: 0;
+}
+
+.btn-addcart {
+    font-size: .7rem;
+    background-color: #000000;
+    color: white;
+    border-radius: 20px;
+    filter: drop-shadow(1px 3px 3px lightgray);
+    padding: .5rem .75rem;
+}
+
+.addcart-img-container {
+    position:relative;
+    /* max-height: 30%; */
+    background-color: rgba(0, 0, 0, .4);
+}
+
+.addcart-img-container .product-img,
+.addcart-img-container .video-wrap {
+    height: 350px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.carousel-inner img,
+.carousel-inner video,
+video.myvid {
+    width: 100%;
+    height: 100%;
+    /* border-radius: .85rem !important; */
+}
+
+.addcart-wishlist {
+    width: 28px;
+    height: 28px;
+    position: absolute;
+}
+
+.addcart-wishlist.star {
+    right: 45px;
+    bottom: 15px;
+}
+
+.addcart-wishlist.more {
+    right: 20px;
+    bottom: 15px;
+}
+
+.addcart-wishlist.logo {
+    border-radius: 50%;
+    left: 20px;
+    bottom: 15px;
+}
+
+.addcart-wishlist.verif {
+    width: 15px;
+    height: auto;
+    left: 55px;
+    bottom: 21px;
+}
+
+.addcart-wishlist.name {
+    width: fit-content;
+    color: white !important;
+    left: 72px;
+    bottom: 15px;
+}
+
+#modal-addtocart .modal-dialog {
+    /* z-index: 9999; */
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    min-width: 100% !important;
+}
+
+#modal-addtocart .modal-dialog #blok{
+    opacity: 0;
+}
+
+.addcart-img-container hr#drag-this {
+    position: absolute;
+    top: 8px;
+    width: 30%;
+    border-top: 5px solid white;
+    border-radius: 15px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin: 0;
+}
+
+#product-container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: white;
+    overflow-x: auto;
+    box-sizing: border-box;
+}
+
+#product-container ul {
+    list-style-type: none;
+    user-select: none;
+    display: flex;
+    margin-bottom: 0;
+    overflow-x: auto;
+    padding-inline-start: 0;
+    padding: 10px 0;
+}
+
+#product-container ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+}
+
+#product-container ul li:first-child {
+    padding-left: 10px
+}
+
+#product-container ul li:last-child {
+    padding-right: 10px
+}
+
+#product-container ul li .story {
+    width: 100px;
+    height: 100px;
+    padding: 1px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0);
+    position: relative;
+}
+
+#product-container ul li .story img {
+    background: #f0f0f0;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#product-container ul li span {
+    color: black;
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
+    max-width: 60px;
+    text-overflow: ellipsis;
+    margin-top: 5px;
+}
+
+#product-container ul li p {
+    color: grey;
+    font-size: 9px;
+    text-align: center;
+    max-width: 60px;
+    text-overflow: ellipsis;
+    margin-top: 5px;
+}
+
+#product-container ul li span img {
+    width: 9px;
+    height: 9px;
+    margin-right: 2px;
+    vertical-align: middle;
+}
+
+.modal-dialog {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    min-width: 100% !important;
+    
+}
+
+.modal-content {
+    height: 25vh;
+}
+
+#confirm-changes {
+    border: none;
+    box-shadow: none;
+    color: white;
+    background-color: #000000;
+    border-radius: 20px;
+}
+
+.btn-addcart {
+    font-size: .7rem;
+    background-color: #000000;
+    color: white;
+    border-radius: 20px;
+    filter: drop-shadow(1px 3px 3px lightgray);
+    padding: .5rem .75rem;
+}
+
+.addcart-img-container {
+    position:relative;
+    /* max-height: 30%; */
+    
+    background-color: rgba(0, 0, 0, .4);
+}
+
+.tab-active {
+    color: black;
+    border-bottom: 2px solid #000000;
+}
+
+.btn:focus,.btn:active {
+   outline: none !important;
+   box-shadow: none;
+   color: black;
+   background-color: transparent;
+   border: 1px solid #ced4da;
+}
+
+.ratings {
+    height: 110px;
+    font-size: 12px;
+}
+
+.list-group-item {
+    padding: .55rem !important;
+    width: 80px;
+    height: 80px;
+    font-size: 10px;
+    text-align: center !important;
+    border-radius: .25rem !important;
+    box-shadow: 0 .25rem .35rem rgba(0,0,0,.075)!important;
+    border: unset;
+    word-spacing: 9999rem;
+    display: flex;
+    align-items: center !important;
+    font-weight: bold;
+}
+
+.animate-bottom {
+    position: relative;
+    animation: animatebottom 1s;
+}
+
+@keyframes animatebottom {
+    from {
+        bottom: -300px;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 1;
+    }
+}

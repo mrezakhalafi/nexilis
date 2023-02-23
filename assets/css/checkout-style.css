@@ -1,0 +1,147 @@
+/* ALL */
+
+body{
+    font-family: 'Poppins';
+    min-height: 100vh;
+}
+
+.font-light {
+    font-weight: 300;
+}
+
+.font-regular {
+    font-weight: 400;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.grand-total {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.text-purple{
+	color: #000000;
+}
+
+.text-grey{
+	color: #585e82;
+}
+
+.bg-purple{
+	background-color: #000000;
+}
+
+.small-text{
+	font-size: 11px;
+}
+
+.orange-badge{
+    background-color: #FFA03E;
+}
+
+.orange-text {
+    color: #FFA03E;
+}
+
+.gray-text {
+    color: grey;
+}
+
+a{
+    text-decoration: none;
+    color: #000000;
+}
+
+a:hover{
+    text-decoration: none;
+    color: #000000;
+}
+
+.small-icon {
+    width: 15px;
+}
+
+.small-left-padding {
+    padding-left: 5px;
+}
+
+.payment-method {
+    font-size: 12px;
+}
+
+.dropdown-toggle{
+    border: none !important;
+    outline: none !important;
+    background-color: #FAFAFF;
+}
+
+.dropdown-toggle::after {
+    display:none;
+}
+
+#modal-payment .modal-dialog {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    min-width: 100% !important;
+    
+}
+
+#modal-payment .modal-content {
+    height: 75vh;
+}
+
+#modal-payment .modal-dialog #blok{
+    opacity: 0;
+}
+
+#modal-address .modal-dialog {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    min-width: 100% !important;
+    
+}
+
+#modal-address .modal-content {
+    height: 25vh;
+}
+
+.payment-button {
+    background-color: #000000; 
+    position: fixed; 
+    bottom: 0; 
+    z-index: 10;
+    width: 100%;
+}
+
+.pay-button {
+    border: none;
+    box-shadow: none;
+    color: white;
+    background-color: #000000;
+    border-radius: 20px;
+}
+
+#confirm-promo {
+    border: none;
+    box-shadow: none;
+    color: white;
+    background-color: #000000;
+    border-radius: 20px;
+}
+
+#confirm-address {
+    border: none;
+    box-shadow: none;
+    color: white;
+    background-color: #000000;
+    border-radius: 20px;
+}
