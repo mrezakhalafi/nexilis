@@ -1572,6 +1572,10 @@ function filterStoreData($filterCategory, $filterSearch, $storeId, official, ver
 
   let finalDupe = officialOnly.concat(verifiedOnly, isOwnPost, friendsOnly, othersOnly);
 
+  if (BE_ID == '128') {
+    finalDupe = finalDupe.filter(dt => dt.CATEGORY != null);
+  }
+
   dataFiltered = [...new Set(finalDupe)];
 
   console.log("FINAL", dataFiltered);
@@ -3131,7 +3135,7 @@ function checkboxBehavior() {
     var isChecked = $(this).is(":checked");
 
     //down
-    $(this).closest('ul').find("ul li input:checkbox").prop("checked", isChecked);
+    $(this).closest('ul li').find("input:checkbox").prop("checked", isChecked);
   });
 }
 

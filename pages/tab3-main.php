@@ -752,13 +752,14 @@ $query->close();
 </body>
 <script>
     var user_type = '<?= $user_type["POSITION"] ?>';
+    var BE_ID = "<?= $be ?>";
 </script>
 <!-- <script type="text/javascript" src="../assets/js/script-filter.js?random=<?= time(); ?>"></script> -->
 <script src="https://apis.google.com/js/api.js" defer></script>
 <!-- <script src="../assets/js/update_counter.js?random=<?= time(); ?>"></script> -->
 <script src="../assets/js/tab5-collection-min.js?r=<?= time(); ?>"></script>
 <script src="../assets/js/long-press-event.min.js?random=<?= time(); ?>"></script>
-<script type="text/javascript" src="../assets/js/script-store_list.js?random=<?= time(); ?>" defer></script>
+<script type="text/javascript" src="../assets/js/script-store_list-min.js?random=<?= time(); ?>" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 <script>
     localStorage.setItem("is_grid", "1");
@@ -773,7 +774,6 @@ $query->close();
             $('#grid-overlay').addClass('d-none');
         }
     }
-
     if (localStorage.lang == 0) {
         $('input#query').attr('placeholder', 'Search');
         $('#no-stores .prod-name').text('Nothing matches your criteria');
@@ -784,11 +784,9 @@ $query->close();
 
     function consentAnswer(ans) {
         let f_pin = new URLSearchParams(window.location.search).get("f_pin");
-
         if (window.Android) {
             f_pin = window.Android.getFPin();
         }
-
         var xmlHttp = new XMLHttpRequest();
         xmlHttp.onreadystatechange = function() {
             if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
@@ -798,52 +796,44 @@ $query->close();
                     openNewPost();
                 }
             }
-        }
+        };
         xmlHttp.open("get", "/nexilis/logics/answer_user_consent?f_pin=" + f_pin + "&consent=mab_consent_posting&answer=" + ans);
         xmlHttp.send();
     }
 
     function checkConsent() {
         let f_pin = new URLSearchParams(window.location.search).get("f_pin");
-
         if (window.Android) {
             f_pin = window.Android.getFPin();
         }
-
         var xmlHttp = new XMLHttpRequest();
         xmlHttp.onreadystatechange = function() {
             if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
                 console.log("CONSENT", xmlHttp.responseText);
-
                 if (xmlHttp.responseText == "" || xmlHttp.responseText == "0") {
                     $("#modal-consent-newpost").modal("show");
                 } else if (xmlHttp.responseText == "1") {
                     openNewPost();
                 }
             }
-        }
+        };
         xmlHttp.open("get", "/nexilis/logics/check_user_consent?f_pin=" + f_pin + "&consent=mab_consent_posting");
         xmlHttp.send();
-
-
     }
 
     function openNewPost(checkIOS = false) {
         let f_pin = new URLSearchParams(window.location.search).get("f_pin");
-
         if (window.Android) {
             f_pin = window.Android.getFPin();
         }
-
         if (f_pin != "") {
             var xmlHttp = new XMLHttpRequest();
             xmlHttp.onerror = function() {
                 $("#modal-check-profile-error").modal("show");
-            }
+            };
             xmlHttp.onreadystatechange = function() {
                 if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
                     console.log("ICP", xmlHttp.responseText);
-
                     if (xmlHttp.responseText == "1") {
                         window.location = "tab5-new-post?f_pin=" + f_pin + "&origin=2";
                         localStorage.setItem("is_grid", "1");
@@ -864,12 +854,11 @@ $query->close();
                         }
                     }
                 }
-            }
+            };
             xmlHttp.open("get", "/nexilis/logics/check_change_profile?f_pin=" + f_pin);
             xmlHttp.send();
         }
     }
-
     $(document).ready(function() {
         if (window.Android) {
             window.Android.tabShowHide(true);
@@ -880,43 +869,28 @@ $query->close();
         }
         $('#to-new-post').click(function() {
             openNewPost();
-
-        })
-
+        });
         localStorage.setItem('origin_page', location.href);
-    })
-
+    });
     if (localStorage.lang == 1) {
-
         $('#why-report-content').text('Apakah anda yakin untuk melaporkan konten ini?');
         $('#why-report-user').text('Apakah anda yakin untuk melaporkan pengguna ini?');
-
         $('#why-block-content').text('Apakah anda yakin untuk memblokir konten ini?');
-
         $('.report-content-category-en').hide();
         $('.report-user-category-en').hide();
-
         $('#btn-submit-report-user').text('Laporkan');
         $('#btn-submit-report-content').text('Laporkan');
-
         $('#report-submited').text('Laporan anda berhasil.');
         $('#report-close').text('Tutup');
-
-        $("#modal-consent-newpost .modal-body p").text("Aplikasi kami membutuhkan izin akses ke foto dan video Anda untuk membuat dan mengunggah konten. Aplikasi kami menyimpan file foto dan/atau video yang digunakan dalam pembuatan konten dalam server, tapi tidak mengirimkan atau membagi data tersebut ke pihak ketiga dalam situasi apapun.")
-
-        $("#modal-consent-newpost .modal-footer #consent-newpost-no").text("TIDAK")
-        $("#modal-consent-newpost .modal-footer #consent-newpost-yes").text("YA")
-
+        $("#modal-consent-newpost .modal-body p").text("Aplikasi kami membutuhkan izin akses ke foto dan video Anda untuk membuat dan mengunggah konten. Aplikasi kami menyimpan file foto dan/atau video yang digunakan dalam pembuatan konten dalam server, tapi tidak mengirimkan atau membagi data tersebut ke pihak ketiga dalam situasi apapun.");
+        $("#modal-consent-newpost .modal-footer #consent-newpost-no").text("TIDAK");
+        $("#modal-consent-newpost .modal-footer #consent-newpost-yes").text("YA");
     } else {
-
         $('.report-content-category-id').hide();
         $('.report-user-category-id').hide();
-
-        $("#modal-consent-newpost .modal-body p").text("Our apps require permission to access your photos and videos to create and upload posts. Our apps store photo and/or video files used in the creation of these contents in its server, but does not share or assign them to third parties under any circumstances.")
-
-        $("#modal-consent-newpost .modal-footer #consent-newpost-no").text("NO")
-        $("#modal-consent-newpost .modal-footer #consent-newpost-yes").text("YES")
-
+        $("#modal-consent-newpost .modal-body p").text("Our apps require permission to access your photos and videos to create and upload posts. Our apps store photo and/or video files used in the creation of these contents in its server, but does not share or assign them to third parties under any circumstances.");
+        $("#modal-consent-newpost .modal-footer #consent-newpost-no").text("NO");
+        $("#modal-consent-newpost .modal-footer #consent-newpost-yes").text("YES");
     }
 </script>
 

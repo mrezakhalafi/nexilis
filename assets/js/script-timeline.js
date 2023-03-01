@@ -2401,7 +2401,7 @@ function checkboxBehavior() {
     var isChecked = $(this).is(":checked");
 
     //down
-    $(this).closest('ul').find("ul li input:checkbox").prop("checked", isChecked);
+    $(this).closest('ul li').find("input:checkbox").prop("checked", isChecked);
     // });
   });
 }

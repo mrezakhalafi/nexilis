@@ -14,17 +14,17 @@ $dbconn = paliolite();
 if (isset($_GET['f_pin'])) {
 
     $f_pin = $_GET['f_pin'];
-  
+
     $queryCheckFpin = "SELECT F_PIN FROM USER_LIST WHERE F_PIN = '$f_pin' OR IMEI = '$f_pin'";
     $que = $dbconn->prepare($queryCheckFpin);
     $que->execute();
     $getFpin = $que->get_result()->fetch_assoc();
     $que->close();
-  
+
     $_GET["f_pin"] = $getFpin["F_PIN"];
     $_SESSION["f_pin"] = $getFpin["F_PIN"];
     $f_pin = $_SESSION["f_pin"];
-  }
+}
 
 // $dbconn = paliolite();
 
@@ -156,7 +156,141 @@ $query->close();
     ?>
 
     <style>
-        *{ -webkit-touch-callout: none !important; } body{ background-image: url('<?php echo $bg_url; ?>'); background-size: 100% auto; background-repeat: repeat-y;} #header-layout{ background: <?=$setting['COLOR_PALETTE']; ?>; z-index: 99;} form#searchFilterForm-a{ border: 1px solid #c9c9c9; background-color: rgba(255, 255, 255, .55); width: 100%;} input#query{ background-color: rgba(255, 255, 255, 0);} .grid-stack>.grid-stack-item>.grid-stack-item-content{ overflow-y: hidden !important;} #content-grid{ } .float{ position: fixed; width: 52px; height: 52px; bottom: 75px; right: 10%; background-color: rgba(0, 0, 0, .65); color: #FFF; border-radius: 50px; text-align: center; box-shadow: 2px 2px 3px #999; display: flex; align-items: center; justify-content: center; font-size: 20px; z-index: 999;} .my-float{ z-index: 999;} #categoryFilter-body ul{ list-style: none; padding: 0; margin: 0;} #gif-container{ position: fixed; z-index: 9999;} #gif-container.left{ left: 20px; right: auto;} #gif-container.right{ right: 20px; left: auto;} #gif-container.top{ top: 30px; bottom: auto; left: 20px;} #gif-container.bottom{ bottom: 140px; top: auto; right: 20px;} .gifs img{ height: 170px; width: 115px;} #categoryFilter-body ul{ list-style: none; padding: 0; margin: 0; font-size: 14px;} #categoryFilter-body input[type="checkbox"]{ margin: 5px;} #categoryFilter-body ul ul{ margin: 0 0 0 15px;} .dropdown-toggle::after{ display: none !important;} #modal-consent-newpost .modal-content{ border: 0; border-radius: 13px;} #modal-consent-newpost .modal-body h6{ font-weight:500;} #modal-consent-newpost .modal-body p{ color: gray; margin-bottom: 0; font-size: .75rem} #modal-consent-newpost .modal-footer{ border-top: 0;} #modal-consent-newpost .modal-footer button{ background-color: transparent !important; color: darkturquoise; font-weight: bold; font-size: .85rem;}
+        * {
+            -webkit-touch-callout: none !important;
+        }
+
+        body {
+            background-image: url('<?php echo $bg_url; ?>');
+            background-size: 100% auto;
+            background-repeat: repeat-y;
+        }
+
+        #header-layout {
+            background: <?= $setting['COLOR_PALETTE']; ?>;
+            z-index: 99;
+        }
+
+        form#searchFilterForm-a {
+            border: 1px solid #c9c9c9;
+            background-color: rgba(255, 255, 255, .55);
+            width: 100%;
+        }
+
+        input#query {
+            background-color: rgba(255, 255, 255, 0);
+        }
+
+        .grid-stack>.grid-stack-item>.grid-stack-item-content {
+            overflow-y: hidden !important;
+        }
+
+        #content-grid {}
+
+        .float {
+            position: fixed;
+            width: 52px;
+            height: 52px;
+            bottom: 75px;
+            right: 10%;
+            background-color: rgba(0, 0, 0, .65);
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            box-shadow: 2px 2px 3px #999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            z-index: 999;
+        }
+
+        .my-float {
+            z-index: 999;
+        }
+
+        #categoryFilter-body ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #gif-container {
+            position: fixed;
+            z-index: 9999;
+        }
+
+        #gif-container.left {
+            left: 20px;
+            right: auto;
+        }
+
+        #gif-container.right {
+            right: 20px;
+            left: auto;
+        }
+
+        #gif-container.top {
+            top: 30px;
+            bottom: auto;
+            left: 20px;
+        }
+
+        #gif-container.bottom {
+            bottom: 140px;
+            top: auto;
+            right: 20px;
+        }
+
+        .gifs img {
+            height: 170px;
+            width: 115px;
+        }
+
+        #categoryFilter-body ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 14px;
+        }
+
+        #categoryFilter-body input[type="checkbox"] {
+            margin: 5px;
+        }
+
+        #categoryFilter-body ul ul {
+            margin: 0 0 0 15px;
+        }
+
+        .dropdown-toggle::after {
+            display: none !important;
+        }
+
+        #modal-consent-newpost .modal-content {
+            border: 0;
+            border-radius: 13px;
+        }
+
+        #modal-consent-newpost .modal-body h6 {
+            font-weight: 500;
+        }
+
+        #modal-consent-newpost .modal-body p {
+            color: gray;
+            margin-bottom: 0;
+            font-size: .75rem
+        }
+
+        #modal-consent-newpost .modal-footer {
+            border-top: 0;
+        }
+
+        #modal-consent-newpost .modal-footer button {
+            background-color: transparent !important;
+            color: darkturquoise;
+            font-weight: bold;
+            font-size: .85rem;
+        }
     </style>
 
 </head>
@@ -570,22 +704,22 @@ $query->close();
         </div>
     </div>
 
-       <!-- consent new post -->
-  <div class="modal fade" id="modal-consent-newpost" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-body">
-          <!-- <h6>Product added to cart!</h6> -->
-          <h6>Disclaimer and Consent</h6>
-          <p id="consent-newpost"></p>
+    <!-- consent new post -->
+    <div class="modal fade" id="modal-consent-newpost" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <!-- <h6>Product added to cart!</h6> -->
+                    <h6>Disclaimer and Consent</h6>
+                    <p id="consent-newpost"></p>
+                </div>
+                <div class="modal-footer">
+                    <button id="consent-newpost-no" type="button" class="btn btn-addcart" data-bs-dismiss="modal" onclick="consentAnswer(0)">NO</button>
+                    <button id="consent-newpost-yes" type="button" class="btn btn-addcart" onclick="consentAnswer(1)">YES</button>
+                </div>
+            </div>
         </div>
-        <div class="modal-footer">
-          <button id="consent-newpost-no" type="button" class="btn btn-addcart" data-bs-dismiss="modal" onclick="consentAnswer(0)">NO</button>
-          <button id="consent-newpost-yes" type="button" class="btn btn-addcart" onclick="consentAnswer(1)">YES</button>
-        </div>
-      </div>
     </div>
-  </div>
 
 </body>
 <script>
@@ -621,93 +755,93 @@ $query->close();
     }
 
     function consentAnswer(ans) {
-      let f_pin = new URLSearchParams(window.location.search).get("f_pin");
+        let f_pin = new URLSearchParams(window.location.search).get("f_pin");
 
-      if (window.Android) {
-        f_pin = window.Android.getFPin();
-      }
-      
-      var xmlHttp = new XMLHttpRequest();
-      xmlHttp.onreadystatechange = function() {
-        if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-          console.log("CONSENT", xmlHttp.responseText);
-          $("#modal-consent-newpost").modal("hide");
-          if (ans == 1) {
-            openNewPost();
-          }
+        if (window.Android) {
+            f_pin = window.Android.getFPin();
         }
-      }
-      xmlHttp.open("get", "/nexilis/logics/answer_user_consent?f_pin=" + f_pin + "&consent=mab_consent_posting&answer=" + ans);
-      xmlHttp.send();
+
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.onreadystatechange = function() {
+            if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                console.log("CONSENT", xmlHttp.responseText);
+                $("#modal-consent-newpost").modal("hide");
+                if (ans == 1) {
+                    openNewPost();
+                }
+            }
+        }
+        xmlHttp.open("get", "/nexilis/logics/answer_user_consent?f_pin=" + f_pin + "&consent=mab_consent_posting&answer=" + ans);
+        xmlHttp.send();
     }
 
     function checkConsent() {
-      let f_pin = new URLSearchParams(window.location.search).get("f_pin");
+        let f_pin = new URLSearchParams(window.location.search).get("f_pin");
 
-      if (window.Android) {
-        f_pin = window.Android.getFPin();
-      }
-      
-      var xmlHttp = new XMLHttpRequest();
-      xmlHttp.onreadystatechange = function() {
-        if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-          console.log("CONSENT", xmlHttp.responseText);
-
-          if (xmlHttp.responseText == "" || xmlHttp.responseText == "0") {
-            $("#modal-consent-newpost").modal("show");
-          } else if (xmlHttp.responseText == "1"){
-            openNewPost();
-          }
+        if (window.Android) {
+            f_pin = window.Android.getFPin();
         }
-      }
-      xmlHttp.open("get", "/nexilis/logics/check_user_consent?f_pin=" + f_pin + "&consent=mab_consent_posting");
-      xmlHttp.send();
 
-      
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.onreadystatechange = function() {
+            if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                console.log("CONSENT", xmlHttp.responseText);
+
+                if (xmlHttp.responseText == "" || xmlHttp.responseText == "0") {
+                    $("#modal-consent-newpost").modal("show");
+                } else if (xmlHttp.responseText == "1") {
+                    openNewPost();
+                }
+            }
+        }
+        xmlHttp.open("get", "/nexilis/logics/check_user_consent?f_pin=" + f_pin + "&consent=mab_consent_posting");
+        xmlHttp.send();
+
+
     }
 
     function openNewPost(checkIOS = false) {
 
-      // if (consent == "yes") {
-      let f_pin = new URLSearchParams(window.location.search).get("f_pin");
+        // if (consent == "yes") {
+        let f_pin = new URLSearchParams(window.location.search).get("f_pin");
 
-      if (window.Android) {
-        f_pin = window.Android.getFPin();
-      }
-
-      if (f_pin != "") {
-        var xmlHttp = new XMLHttpRequest();
-        xmlHttp.onerror = function() {
-          $("#modal-check-profile-error").modal("show");
+        if (window.Android) {
+            f_pin = window.Android.getFPin();
         }
-        xmlHttp.onreadystatechange = function() {
-          if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-            console.log("ICP", xmlHttp.responseText);
 
-            if (xmlHttp.responseText == "1") {
-              window.location = "tab5-new-post?f_pin=" + f_pin + "&origin=1";
-              localStorage.setItem("is_grid", "1");
-              localStorage.setItem('activeQueryGrid', window.location.search);
-            } else {
-              if (window.Android) {
-                if (window.Android.checkProfile()) {
-                  window.location = "tab5-new-post?f_pin=" + f_pin  + "&origin=1";
-                  localStorage.setItem("is_grid", "1");
-                  localStorage.setItem('activeQueryGrid', window.location.search);
-                }
-              } else if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.checkProfile && checkIOS === false) {
-                window.webkit.messageHandlers.checkProfile.postMessage({
-                  param1: '',
-                  param2: 'newpost'
-                });
-                return;
-              }
+        if (f_pin != "") {
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.onerror = function() {
+                $("#modal-check-profile-error").modal("show");
             }
-          }
+            xmlHttp.onreadystatechange = function() {
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                    console.log("ICP", xmlHttp.responseText);
+
+                    if (xmlHttp.responseText == "1") {
+                        window.location = "tab5-new-post?f_pin=" + f_pin + "&origin=1";
+                        localStorage.setItem("is_grid", "1");
+                        localStorage.setItem('activeQueryGrid', window.location.search);
+                    } else {
+                        if (window.Android) {
+                            if (window.Android.checkProfile()) {
+                                window.location = "tab5-new-post?f_pin=" + f_pin + "&origin=1";
+                                localStorage.setItem("is_grid", "1");
+                                localStorage.setItem('activeQueryGrid', window.location.search);
+                            }
+                        } else if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.checkProfile && checkIOS === false) {
+                            window.webkit.messageHandlers.checkProfile.postMessage({
+                                param1: '',
+                                param2: 'newpost'
+                            });
+                            return;
+                        }
+                    }
+                }
+            }
+            xmlHttp.open("get", "/nexilis/logics/check_change_profile?f_pin=" + f_pin);
+            xmlHttp.send();
         }
-        xmlHttp.open("get", "/nexilis/logics/check_change_profile?f_pin=" + f_pin);
-        xmlHttp.send();
-      }
     }
 
     $(document).ready(function() {
@@ -759,8 +893,8 @@ $query->close();
 
         $("#modal-consent-newpost .modal-body p").text("Aplikasi kami membutuhkan izin akses ke foto dan video Anda untuk membuat dan mengunggah konten. Aplikasi kami menyimpan file foto dan/atau video yang digunakan dalam pembuatan konten dalam server, tapi tidak mengirimkan atau membagi data tersebut ke pihak ketiga dalam situasi apapun.")
 
-      $("#modal-consent-newpost .modal-footer #consent-newpost-no").text("TIDAK")
-      $("#modal-consent-newpost .modal-footer #consent-newpost-yes").text("YA")
+        $("#modal-consent-newpost .modal-footer #consent-newpost-no").text("TIDAK")
+        $("#modal-consent-newpost .modal-footer #consent-newpost-yes").text("YA")
 
     } else {
 
@@ -770,7 +904,7 @@ $query->close();
         $("#modal-consent-newpost .modal-body p").text("Our apps require permission to access your photos and videos to create and upload posts. Our apps store photo and/or video files used in the creation of these contents in its server, but does not share or assign them to third parties under any circumstances.")
 
         $("#modal-consent-newpost .modal-footer #consent-newpost-no").text("NO")
-      $("#modal-consent-newpost .modal-footer #consent-newpost-yes").text("YES")
+        $("#modal-consent-newpost .modal-footer #consent-newpost-yes").text("YES")
 
     }
 </script>
