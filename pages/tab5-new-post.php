@@ -520,7 +520,7 @@ while ($res = $catResult->fetch_assoc()) {
         </div>
         <div class="modal-footer">
           <!-- <button id="form-posting-close" type="button" class="btn btn-addcart" data-bs-dismiss="modal">Close</button> -->
-          <button type="button" class="btn btn-addcart" data-bs-dismiss="modal" id="confirm-back-no">Close</button>
+          <button type="button" class="btn btn-addcart" data-bs-dismiss="modal" id="confirm-back-no2"></button>
         </div>
       </div>
     </div>
@@ -847,7 +847,7 @@ while ($res = $catResult->fetch_assoc()) {
   }
 
   var $image_type_arr = ["jpg", "jpeg", "png", "webp"];
-  var $video_type_arr = ["mp4", "mov", "wmv", 'flv', 'webm', 'mkv', 'gif', 'm4v', 'avi', 'mpg'];
+  var $video_type_arr = ["mp4", "mov", "wmv", 'flv', 'webm', 'mkv', 'gif', 'm4v', 'avi', 'mpg', 'quicktime'];
 
   var loadFile = function(event, number) {
     // // console.log('event', event);
@@ -875,6 +875,13 @@ while ($res = $catResult->fetch_assoc()) {
           vid.src = reader.result;
           vid.load();
         } else {
+
+          if (localStorage.lang == 1) {
+            $('#confirm-back-no2').text("Tutup");
+          } else {
+            $('#confirm-back-no2').text("Close");
+          }
+
           $("#file-format-warning").modal("show");
           event.target.value = "";
         }

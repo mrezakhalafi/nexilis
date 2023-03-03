@@ -1609,6 +1609,12 @@ function eraseQuery() {
       $('#delete-query').removeClass('d-none');
     } else {
       $('#delete-query').addClass('d-none');
+
+      let url = new URL(window.location.href);
+
+      url.searchParams.set('query', '');
+      window.history.replaceState({}, '', url);
+      searchFilter();
     }
   })
 }
