@@ -1256,14 +1256,21 @@ let isMultiTouch = 0;
 
 function pauseAll() { // FUNCTION CALLED IN NATIVE WHILE SWITCHING TAB
   console.log("PAUSE ALL");
+  document.querySelectorAll(".product-row .timeline-main video").forEach(vid => {
+    vid.pause();
+    vid.src= "";
+  })
+  document.querySelectorAll("#modal-addtocart .modal-body video").forEach(vid => {
+    vid.pause();
+})
   document.addEventListener("touchstart", function(e) {
     console.log(e.touches);
   })
-  document.querySelectorAll("video").forEach(vid => {
-    vid.pause();
-    vid.src = "";
-    // console.log(vid.id, vid.src);
-  })
+  // document.querySelectorAll("video").forEach(vid => {
+  //   vid.pause();
+  //   vid.src = "";
+  //   // console.log(vid.id, vid.src);
+  // })
   $('#pbr-timeline').html('');
   // startPause = 1;
   $("body").addClass('no-modal');
@@ -1294,7 +1301,7 @@ function resumeAll() {
   // checkCarousel();
   // updateCounter();
   // fetchNotifCount();
-
+  playModalVideo();
 }
 
 function visitStore($store_code, $f_pin, $is_entering) {
