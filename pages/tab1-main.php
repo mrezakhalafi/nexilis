@@ -157,7 +157,7 @@ $isCatExist = $resCategory['CNT_CATEGORY'] > 0;
   <script src="../assets/js/jQueryRotate.js"></script>
   <script src="../assets/js/jquery.validate.js"></script>
   <script src="../assets/js/isInViewport.min.js"></script>
-<script src="../assets/js/jquery-ui.min.js"></script>
+  <script src="../assets/js/jquery-ui.min.js"></script>
   <script src="../assets/js/jquery.ui.touch-punch.min.js"></script>
   <script src="https://apis.google.com/js/api.js" defer></script>
   <script>
@@ -171,7 +171,201 @@ $isCatExist = $resCategory['CNT_CATEGORY'] > 0;
   ?>
 
   <style>
-     *{ -webkit-touch-callout: none !important; } body{ position: relative;} body.modal-open{ overflow: hidden;} body::after{ content: ""; background-image: url('<?php echo $bg_url; ?>'); background-size: 100% auto; background-repeat: repeat-y; opacity: .5; top: 0; left: 0; bottom: 0; right: 0; position: fixed; z-index: -1;} #header-layout{ background: <?=$setting['COLOR_PALETTE']; ?>; z-index: 99; transition: top 0.4s ease-in-out;} #header-layout #header{ } #story-container{ background: transparent;} form#searchFilterForm-a{ border: 1px solid #c9c9c9; background-color: rgba(255, 255, 255, .55); width: 100%;} #searchFilter-a{ margin-left: 0;} input#query{ background-color: rgba(255, 255, 255, 0);} .float{ position: fixed; width: 52px; height: 52px; bottom: 75px; right: 10%; background-color: rgba(0, 0, 0, .65); color: #FFF; border-radius: 50px; text-align: center; box-shadow: 2px 2px 3px #999; display: flex; align-items: center; justify-content: center; font-size: 20px;} .my-float{ } .post-status.dropdown-toggle::after{ display: none;} .dropdown ul li{ } #pbr-timeline{ max-width: 100%; overflow-x: hidden;} .addcart-wishlist.logo{ object-fit: cover;} div#loading-overlay{ display: table; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 200;} div#loading-overlay>div{ display: table-cell; width: 100%; height: 100%; background: white; opacity: 1.5; text-align: center; vertical-align: middle;} .timeline#pbr-timeline{ } #modal-addtocart .modal-dialog{ top: 0;} .comments.is-deleted{ display: none;} #modal-consent-newpost .modal-content{ border: 0; border-radius: 13px;} #modal-consent-newpost .modal-body p{ color:gray; margin-bottom:0;} #modal-consent-newpost .modal-footer{ border-top :0;} #modal-consent-newpost .modal-footer button{ background-color: transparent !important; color: darkturquoise; font-weight: bold; font-size: .85rem;} .timeline-main .video-wrap video{ max-height: 600px; object-fit: cover;} <?php $rand_pos=rand(0, 1); ?>#gif-container{ position: fixed; z-index: 9999;} #gif-container.left{ left: 20px; right: auto;} #gif-container.right{ right: 20px; left: auto;} #gif-container.top{ top: 30px; bottom: auto; left: 20px;} #gif-container.bottom{ bottom: 140px; top: auto; right: 20px;} .gifs img{ height: 170px; width: 115px;} #categoryFilter-body ul{ list-style: none; padding: 0; margin: 0; font-size: 14px;} #categoryFilter-body input[type="checkbox"]{ margin: 5px;} #categoryFilter-body ul ul{ margin: 0 0 0 15px;} .timeline-image .carousel-inner, .timeline-image .carousel-item.active, .timeline-image .carousel-item-wrap, .timeline-image .video-wrap{ overflow: visible !important;} 
+    * {
+      -webkit-touch-callout: none !important;
+    }
+
+    body {
+      position: relative;
+    }
+
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    body::after {
+      content: "";
+      background-image: url('<?php echo $bg_url; ?>');
+      background-size: 100% auto;
+      background-repeat: repeat-y;
+      opacity: .5;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: fixed;
+      z-index: -1;
+    }
+
+    #header-layout {
+      background: <?= $setting['COLOR_PALETTE']; ?>;
+      z-index: 99;
+      transition: top 0.4s ease-in-out;
+    }
+
+    #header-layout #header {}
+
+    #story-container {
+      background: transparent;
+    }
+
+    form#searchFilterForm-a {
+      border: 1px solid #c9c9c9;
+      background-color: rgba(255, 255, 255, .55);
+      width: 100%;
+    }
+
+    #searchFilter-a {
+      margin-left: 0;
+    }
+
+    input#query {
+      background-color: rgba(255, 255, 255, 0);
+    }
+
+    .float {
+      position: fixed;
+      width: 52px;
+      height: 52px;
+      bottom: 75px;
+      right: 10%;
+      background-color: rgba(0, 0, 0, .65);
+      color: #FFF;
+      border-radius: 50px;
+      text-align: center;
+      box-shadow: 2px 2px 3px #999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .my-float {}
+
+    .post-status.dropdown-toggle::after {
+      display: none;
+    }
+
+    .dropdown ul li {}
+
+    #pbr-timeline {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    .addcart-wishlist.logo {
+      object-fit: cover;
+    }
+
+    div#loading-overlay {
+      display: table;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 200;
+    }
+
+    div#loading-overlay>div {
+      display: table-cell;
+      width: 100%;
+      height: 100%;
+      background: white;
+      opacity: 1.5;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .timeline#pbr-timeline {}
+
+    #modal-addtocart .modal-dialog {
+      top: 0;
+    }
+
+    .comments.is-deleted {
+      display: none;
+    }
+
+    #modal-consent-newpost .modal-content {
+      border: 0;
+      border-radius: 13px;
+    }
+
+    #modal-consent-newpost .modal-body p {
+      color: gray;
+      margin-bottom: 0;
+    }
+
+    #modal-consent-newpost .modal-footer {
+      border-top: 0;
+    }
+
+    #modal-consent-newpost .modal-footer button {
+      background-color: transparent !important;
+      color: darkturquoise;
+      font-weight: bold;
+      font-size: .85rem;
+    }
+
+    .timeline-main .video-wrap video {
+      max-height: 600px;
+      object-fit: cover;
+    }
+
+    <?php $rand_pos = rand(0, 1); ?>#gif-container {
+      position: fixed;
+      z-index: 9999;
+    }
+
+    #gif-container.left {
+      left: 20px;
+      right: auto;
+    }
+
+    #gif-container.right {
+      right: 20px;
+      left: auto;
+    }
+
+    #gif-container.top {
+      top: 30px;
+      bottom: auto;
+      left: 20px;
+    }
+
+    #gif-container.bottom {
+      bottom: 140px;
+      top: auto;
+      right: 20px;
+    }
+
+    .gifs img {
+      height: 170px;
+      width: 115px;
+    }
+
+    #categoryFilter-body ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    #categoryFilter-body input[type="checkbox"] {
+      margin: 5px;
+    }
+
+    #categoryFilter-body ul ul {
+      margin: 0 0 0 15px;
+    }
+
+    .timeline-image .carousel-inner,
+    .timeline-image .carousel-item.active,
+    .timeline-image .carousel-item-wrap,
+    .timeline-image .video-wrap {
+      overflow: visible !important;
+    }
   </style>
 </head>
 
@@ -182,13 +376,13 @@ $isCatExist = $resCategory['CNT_CATEGORY'] > 0;
   > -->
   <div id="loading-overlay" class="d-none">
     <div>
-      <img draggable="false"  src="../assets/img/nxsport_icons/nx.png" style="width:150px; height:auto;" />
+      <img draggable="false" src="../assets/img/nxsport_icons/nx.png" style="width:150px; height:auto;" />
       <br>
       <br>
       <h6><strong>Loading... please wait.</strong></h6>
     </div>
   </div>
-  <img draggable="false"  id="scroll-top" class="rounded-circle" src="../assets/img/ic_collaps_arrow.png" onclick="topFunction(true)">
+  <img draggable="false" id="scroll-top" class="rounded-circle" src="../assets/img/ic_collaps_arrow.png" onclick="topFunction(true)">
   <div class="container-fluid">
 
 
@@ -216,8 +410,8 @@ $isCatExist = $resCategory['CNT_CATEGORY'] > 0;
                   document.getElementById('query').placeholder = "Pencarian";
                 }
               </script>
-              <img draggable="false"  class="d-none" id="delete-query" src="../assets/img/icons/X-fill-(Black).png">
-              <img draggable="false"  id="voice-search" src="../assets/img/icons/Voice-Command-(Black).png" onclick="voiceSearch();">
+              <img draggable="false" class="d-none" id="delete-query" src="../assets/img/icons/X-fill-(Black).png">
+              <img draggable="false" id="voice-search" src="../assets/img/icons/Voice-Command-(Black).png" onclick="voiceSearch();">
               <!-- </div> -->
 
             </form>
@@ -225,16 +419,16 @@ $isCatExist = $resCategory['CNT_CATEGORY'] > 0;
           </div>
         </div>
         <div id="gear-div" class="col-3 d-flex align-items-center justify-content-center" style="padding-right: 9px; padding-left: 9px;">
-          <img draggable="false"  class="header-icon me-1" id="toggle-filter" src="../assets/img/filter-icon-gray.png">
+          <img draggable="false" class="header-icon me-1" id="toggle-filter" src="../assets/img/filter-icon-gray.png">
           <a class="me-1" id="to-grid-layout">
             <div class="position-relative">
-              <img draggable="false"  class="header-icon" src="../assets/img/ic_grid.png">
+              <img draggable="false" class="header-icon" src="../assets/img/ic_grid.png">
               <!-- <span id='counter-here'></span> -->
             </div>
           </a>
           <a class="me-3" id="to-list-layout">
             <div class="position-relative">
-              <img draggable="false"  class="header-icon mx-auto" src="../assets/img/ic_list.png">
+              <img draggable="false" class="header-icon mx-auto" src="../assets/img/ic_list.png">
               <!-- <span id='counter-notifs'></span> -->
             </div>
           </a>
@@ -249,7 +443,7 @@ $isCatExist = $resCategory['CNT_CATEGORY'] > 0;
               <label for="filter-verified">Verified</label> -->
               <div class="form-check" style="padding-left: 0px">
                 <label class="form-check-label" for="filter-official">
-                  <img draggable="false"  src="../assets/img/ic_nuc_follow3_check.png" style="width: 14px;height: 14px;margin-left: 5px;margin-right: 5px;margin-top: -3px">Official
+                  <img draggable="false" src="../assets/img/ic_nuc_follow3_check.png" style="width: 14px;height: 14px;margin-left: 5px;margin-right: 5px;margin-top: -3px">Official
                 </label>
                 <input class="form-check-input" type="checkbox" checked value="" id="filter-official" style="margin: 5px; margin-top: 3px; accent-color: #58baed; border: 2px solid #58baed; float: right">
               </div>
@@ -259,7 +453,7 @@ $isCatExist = $resCategory['CNT_CATEGORY'] > 0;
               <label for="filter-verified">Verified</label> -->
               <div class="form-check" style="padding-left: 0px">
                 <label class="form-check-label" for="filter-verified">
-                  <img draggable="false"  src="../assets/img/ic_nuc_follow3_check.png" style="width: 14px;height: 14px;margin-left: 5px;margin-right: 5px;margin-top: -3px">Verified
+                  <img draggable="false" src="../assets/img/ic_nuc_follow3_check.png" style="width: 14px;height: 14px;margin-left: 5px;margin-right: 5px;margin-top: -3px">Verified
                 </label>
                 <input class="form-check-input" type="checkbox" checked value="" id="filter-verified" style="margin: 5px; margin-top: 3px; accent-color: #58baed; border: 2px solid #58baed; float: right">
               </div>
@@ -269,7 +463,7 @@ $isCatExist = $resCategory['CNT_CATEGORY'] > 0;
               <label for="filter-friends">Friends</label> -->
               <div class="form-check" style="padding-left: 0px">
                 <label class="form-check-label" for="filter-friends">
-                  <img draggable="false"  src="../assets/img/ic_nuc_follow3_check.png" style="width: 14px;height: 14px;margin-left: 5px;margin-right: 5px;margin-top: -3px">Friends
+                  <img draggable="false" src="../assets/img/ic_nuc_follow3_check.png" style="width: 14px;height: 14px;margin-left: 5px;margin-right: 5px;margin-top: -3px">Friends
                 </label>
                 <input class="form-check-input" type="checkbox" checked value="" id="filter-friends" style="margin: 5px; margin-top: 3px; accent-color: #58baed; border: 2px solid #58baed; float: right">
               </div>
@@ -279,7 +473,7 @@ $isCatExist = $resCategory['CNT_CATEGORY'] > 0;
               <label for="filter-friends">Friends</label> -->
               <div class="form-check" style="padding-left: 0px">
                 <label class="form-check-label" for="filter-others">
-                  <img draggable="false"  src="../assets/img/ic_nuc_follow3_check.png" style="width: 14px;height: 14px;margin-left: 5px;margin-right: 5px;margin-top: -3px">Others
+                  <img draggable="false" src="../assets/img/ic_nuc_follow3_check.png" style="width: 14px;height: 14px;margin-left: 5px;margin-right: 5px;margin-top: -3px">Others
                 </label>
                 <input class="form-check-input" type="checkbox" value="" id="filter-others" style="margin: 5px; margin-top: 3px; accent-color: #58baed; border: 2px solid #58baed; float: right">
               </div>
@@ -296,8 +490,10 @@ $isCatExist = $resCategory['CNT_CATEGORY'] > 0;
       <?php //require('timeline_products.php'); 
       ?>
     </div>
-    <div id="loader_message">
-      TEST
+    <div id="loader_message" class=" d-none my-2 justify-content-center align-items-center">
+      <div class="spinner-border text-dark" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
     </div>
 
     <a id="to-new-post" class="float">
@@ -309,7 +505,7 @@ $isCatExist = $resCategory['CNT_CATEGORY'] > 0;
     <div class="modal-dialog" role="document">
       <div class="modal-content animate-bottom">
         <div class="modal-back" data-bs-dismiss="modal" onclick="hideAddToCart()">
-          <img draggable="false"  src="../assets/img/icons/Back-(White) - Copy.png" />
+          <img draggable="false" src="../assets/img/icons/Back-(White) - Copy.png" />
         </div>
         <div class="modal-body p-0" id="modal-add-body" style="position: relative;">
         </div>
@@ -343,8 +539,8 @@ $isCatExist = $resCategory['CNT_CATEGORY'] > 0;
                 <h5 id="why-report-content">Why you want to report this content?</h5>
               </div>
               <div class="col-12" style="float: left; font-size: 16px">
-                
-                  <form action="/action_page.php">
+
+                <form action="/action_page.php">
                   <ul style="padding-left:0">
 
                     <?php
@@ -356,7 +552,7 @@ $isCatExist = $resCategory['CNT_CATEGORY'] > 0;
 
                     foreach ($categoryEN as $c) : ?>
 
-                    
+
 
                       <div class="form-check report-content-category-en">
                         <input class="form-check-input" type="radio" name="report_category" id="report_category<?= $c['ID'] ?>" value="<?= $c['ID'] ?>" <?= $c['ID'] == 1 ? 'checked' : '' ?>>
@@ -387,9 +583,9 @@ $isCatExist = $resCategory['CNT_CATEGORY'] > 0;
 
                     ?>
 
-</ul>
+                  </ul>
 
-                    <!-- <div class="form-check">
+                  <!-- <div class="form-check">
                           <input class="form-check-input" type="radio" name="report_category" id="report_category1" value="0">
                           <label class="form-check-label" for="report_category1">
                             It's a scam
@@ -420,13 +616,13 @@ $isCatExist = $resCategory['CNT_CATEGORY'] > 0;
                           </label>
                         </div> -->
 
-                    <div class="row mt-3">
-                      <div class="col-12 d-flex justify-content-center">
-                        <button id="btn-submit-report-content" class="btn btn-dark" type="button" onclick="reportContentSubmit()">Submit</button>
-                      </div>
+                  <div class="row mt-3">
+                    <div class="col-12 d-flex justify-content-center">
+                      <button id="btn-submit-report-content" class="btn btn-dark" type="button" onclick="reportContentSubmit()">Submit</button>
                     </div>
-                  </form>
-                
+                  </div>
+                </form>
+
               </div>
             </div>
           </div>
@@ -446,8 +642,8 @@ $isCatExist = $resCategory['CNT_CATEGORY'] > 0;
                 <h5 id="why-report-user">Why you want to report this user?</h5>
               </div>
               <div class="col-12" style="float: left; font-size: 16px">
-                
-                  <form action="/action_page.php">
+
+                <form action="/action_page.php">
 
                   <ul style="padding-left:0">
                     <?php
@@ -485,9 +681,9 @@ $isCatExist = $resCategory['CNT_CATEGORY'] > 0;
                     <?php endforeach;
 
                     ?>
-                    </ul>
+                  </ul>
 
-                    <!-- <div class="form-check">
+                  <!-- <div class="form-check">
                                         <input class="form-check-input" type="radio" name="report_category" id="report_category1" value="0">
                                         <label class="form-check-label" for="report_category1">
                                         It's a scam
@@ -518,13 +714,13 @@ $isCatExist = $resCategory['CNT_CATEGORY'] > 0;
                                         </label>
                                     </div> -->
 
-                    <div class="row mt-3">
-                      <div class="col-12 d-flex justify-content-center">
-                        <button id="btn-submit-report-user" class="btn btn-dark" type="button" onclick="reportUserSubmit()">Submit</button>
-                      </div>
+                  <div class="row mt-3">
+                    <div class="col-12 d-flex justify-content-center">
+                      <button id="btn-submit-report-user" class="btn btn-dark" type="button" onclick="reportUserSubmit()">Submit</button>
                     </div>
-                  </form>
-                
+                  </div>
+                </form>
+
               </div>
             </div>
           </div>
@@ -724,7 +920,7 @@ $isCatExist = $resCategory['CNT_CATEGORY'] > 0;
       if (window.Android) {
         f_pin = window.Android.getFPin();
       }
-      
+
       var xmlHttp = new XMLHttpRequest();
       xmlHttp.onreadystatechange = function() {
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
@@ -745,7 +941,7 @@ $isCatExist = $resCategory['CNT_CATEGORY'] > 0;
       if (window.Android) {
         f_pin = window.Android.getFPin();
       }
-      
+
       var xmlHttp = new XMLHttpRequest();
       xmlHttp.onreadystatechange = function() {
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
@@ -753,7 +949,7 @@ $isCatExist = $resCategory['CNT_CATEGORY'] > 0;
 
           if (xmlHttp.responseText == "" || xmlHttp.responseText == "0") {
             $("#modal-consent-newpost").modal("show");
-          } else if (xmlHttp.responseText == "1"){
+          } else if (xmlHttp.responseText == "1") {
             openNewPost();
           }
         }
@@ -761,7 +957,7 @@ $isCatExist = $resCategory['CNT_CATEGORY'] > 0;
       xmlHttp.open("get", "/nexilis/logics/check_user_consent?f_pin=" + f_pin + "&consent=mab_consent_posting");
       xmlHttp.send();
 
-      
+
     }
 
     function openNewPost(checkIOS = false) {
